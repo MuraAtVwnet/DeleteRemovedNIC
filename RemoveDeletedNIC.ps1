@@ -23,6 +23,7 @@ function GetNowNICs(){
 	for( $Index = 0;$Index -lt $Max; $Index++){
 		$NowNICObject = New-Object PSObject | Select-Object DeviceID, DeviceName
 
+		# 先頭行にある余分な文字列を削除
 		if( $Index -eq 0 ){
 			$NowNICs[$Index] = $NowNICs[$Index] -replace "^Listing [0-9]+ .+\("
 		}
